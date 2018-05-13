@@ -102,7 +102,7 @@ module.exports = {
 
       await Huejay.lights.save(light);
 
-      setTimeout(() => {
+      setTimeout(async() => {
         light.off = true;
         await Huejay.lights.save(light);
       }, 50);
