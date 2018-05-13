@@ -32,6 +32,6 @@ module.exports.routes = {
   'GET /lights/all/fire': 'LightController.allFire',
   'GET /lights/all/wave': 'LightController.waves',
 
-  'GET /sensors': 'SensorController.read'
+  'GET /sensors/:pin': 'SensorController.read'
 
 };
