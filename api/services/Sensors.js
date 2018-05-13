@@ -18,8 +18,7 @@ module.exports = {
       let cb = () => {
         console.log(`Someone is arriving!`);
 
-        Effects.wave();
-        setTimeout(Effects.fire, 10000);
+        Effects.allGreet();
       };
 
       rpio.open(pin, rpio.INPUT);

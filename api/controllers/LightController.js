@@ -12,34 +12,40 @@ module.exports = {
     return res.status(200).json({ message: 'Started scanning... '});
   },
 
-  on(req, res) {
-    Effects.on();
+  allOn(req, res) {
+    Effects.allOn();
 
     return res.status(200).json({ message: 'Lights are on.' });
   },
 
-  off(req, res) {
-    Effects.off();
+  allOff(req, res) {
+    Effects.allOff();
 
     return res.status(200).json({ message: 'Lights are off.' });
   },
 
-  fire(req, res) {
-    Effects.fire();
+  allFire(req, res) {
+    Effects.allFire();
 
     return res.status(200).json({ message: 'Lights are on fire.' });
   },
 
-  ice(req, res) {
-    Effects.ice();
+  allIce(req, res) {
+    Effects.allIce();
 
     return res.status(200).json({ message: 'Lights are on ice.' });
   },
 
-  waves(req, res) {
-    Effects.wave();
+  allGreet(req, res) {
+    Effects.allGreet();
 
     return res.status(200).json({ message: 'Lights are wavy.' });
+  },
+
+  allStrobe(req, res) {
+    Effects.allStrobe();
+
+    return res.status(200).json({ message: 'Lights are raving.' });
   }
 
 };
