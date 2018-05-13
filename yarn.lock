@@ -778,6 +778,10 @@ binary-search-tree@0.2.5:
   dependencies:
     underscore "~1.4.4"
 
+bindings@*:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.3.0.tgz#b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7"
+
 blob@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.4.tgz#bcf13052ca54463f30f9fc7e95b9a47630a94921"
@@ -2685,6 +2689,10 @@ mute-stream@0.0.7, mute-stream@~0.0.4:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
+nan@*:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -3236,6 +3244,13 @@ router@1.3.2:
     path-to-regexp "0.1.7"
     setprototypeof "1.1.0"
     utils-merge "1.0.1"
+
+rpio@^0.9.21:
+  version "0.9.21"
+  resolved "https://registry.yarnpkg.com/rpio/-/rpio-0.9.21.tgz#51cf40055899e4db37e2d8ed3e40596736b77fea"
+  dependencies:
+    bindings "*"
+    nan "*"
 
 rttc@^1.0.2:
   version "1.0.2"

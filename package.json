@@ -11,6 +11,7 @@
     "async": "2.0.1",
     "grunt": "1.0.1",
     "huejay": "^1.8.2",
+    "rpio": "^0.9.21",
     "sails": "^1.0.1",
     "sails-hook-grunt": "^3.0.2",
     "sails-hook-orm": "^2.0.0-16",
