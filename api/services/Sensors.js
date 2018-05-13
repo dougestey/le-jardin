@@ -1,15 +1,12 @@
 let rpio = require('rpio');
-//rpio.init();
+rpio.init();
 
 module.exports = {
 
   IRAlpha: {
 
     read(pin) {
-      console.log(`Attempting to read pin ${pin}...`);
-
       rpio.open(pin, rpio.INPUT);
-
       let value = rpio.read(pin);
 
       console.log(`IR Alpha (Pin ${pin}) is currently set ${value ? 'high' : 'low'}`);
@@ -20,10 +17,13 @@ module.exports = {
     start(pin) {
       let cb = () => {
         console.log(`Someone is arriving!`);
+
+        Effects.wave();
+        setTimeout(Effects.fire, 10000);
       };
 
       rpio.open(pin, rpio.INPUT);
-      rpio.poll(pin, cb);
+      rpio.poll(pin, cb, rpio.POLL_HIGH);
     },
 
     stop(pin) {
