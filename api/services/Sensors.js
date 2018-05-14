@@ -1,6 +1,8 @@
 let rpio = require('rpio');
 rpio.init();
 
+let interval = 0;
+
 module.exports = {
 
   IRAlpha: {
@@ -16,9 +18,8 @@ module.exports = {
 
     start(pin) {
       let cb = () => {
-        console.log(`Someone is arriving!`);
-
-        Effects.allGreet();
+          console.log('Someone is arriving!');
+          Effects.allGreet();
       };
 
       rpio.open(pin, rpio.INPUT);

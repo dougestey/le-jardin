@@ -29,10 +29,8 @@ module.exports.routes = {
 
   'GET /lights/all/off': 'LightController.allOff',
   'GET /lights/all/on': 'LightController.allOn',
-  'GET /lights/all/fire': 'LightController.allFire',
-  'GET /lights/all/ice': 'LightController.allIce',
+  'GET /lights/all/rotate': 'LightController.allRotate',
   'GET /lights/all/greet': 'LightController.allGreet',
-  'GET /lights/all/strobe': 'LightController.allStrobe',
 
   'GET /sensors/:pin': 'SensorController.read',
   'GET /sensors/:pin/start': 'SensorController.start',

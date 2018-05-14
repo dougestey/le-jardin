@@ -24,16 +24,10 @@ module.exports = {
     return res.status(200).json({ message: 'Lights are off.' });
   },
 
-  allFire(req, res) {
-    Effects.allFire();
+  allRotate(req, res) {
+    Effects.allRotate();
 
-    return res.status(200).json({ message: 'Lights are on fire.' });
-  },
-
-  allIce(req, res) {
-    Effects.allIce();
-
-    return res.status(200).json({ message: 'Lights are on ice.' });
+    return res.status(200).json({ message: 'Lights are on rotation.' });
   },
 
   allGreet(req, res) {
@@ -41,11 +35,5 @@ module.exports = {
 
     return res.status(200).json({ message: 'Lights are wavy.' });
   },
-
-  allStrobe(req, res) {
-    Effects.allStrobe();
-
-    return res.status(200).json({ message: 'Lights are raving.' });
-  }
 
 };

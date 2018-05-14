@@ -7,7 +7,7 @@ let interval1 = 0,
 let _clearAllIntervals = () => {
   if (interval1)
     clearInterval(interval1);
-  
+
   if (interval2)
     clearInterval(interval2);
 
@@ -21,7 +21,7 @@ module.exports = {
     _clearAllIntervals();
 
     let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
+    lights = lights.filter((light) => light.reachable);
 
     for (let light of lights) {
       light.on = true;
@@ -38,7 +38,9 @@ module.exports = {
     _clearAllIntervals();
 
     let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
+    lights = lights.filter((light) => light.reachable);
+
+    console.log(lights[0]);
 
     for (let light of lights) {
       light.on = false;
@@ -48,76 +50,31 @@ module.exports = {
     }
   },
 
-  async allFire() {
+  async allRotate() {
     _clearAllIntervals();
 
     let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
+    lights = lights.filter((light) => light.reachable);
 
     let run = async() => {
       for (let light of lights) {
         light.on = true;
-        light.hue = rndm(0, 8000);
-        light.brightness = rndm(0, 60);
+        light.hue = rndm(0, 65000);
+        light.brightness = rndm(0, 100);
         light.transitionTime = 0.5;
-  
+
         await Huejay.lights.save(light);
       }
     };
 
-    interval1 = setInterval(run, 10000);
-  },
-
-  async allIce() {
-    _clearAllIntervals();
-
-    let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
-
-    let run = async() => {
-      for (let light of lights) {
-        light.on = true;
-        light.hue = rndm(35000, 52000);
-        light.brightness = rndm(0, 60);
-        light.transitionTime = 0.5;
-  
-        await Huejay.lights.save(light);
-      }
-    };
-
-    interval1 = setInterval(run, 10000);
-  },
-
-  async allStrobe() {
-    _clearAllIntervals();
-
-    let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
-
-    let run = async(light) => {
-      light.on = true;
-      light.hue = 45000;
-      light.brightness = rndm(70, 100);
-      light.transitionTime = 0;
-
-      await Huejay.lights.save(light);
-
-      setTimeout(async() => {
-        light.off = true;
-        await Huejay.lights.save(light);
-      }, 50);
-    };
-
-    interval1 = setInterval(run(lights[0]), 100);
-    interval2 = setInterval(run(lights[1]), 75);
-    interval3 = setInterval(run(lights[2]), 125);
+    interval1 = setInterval(run, 500);
   },
 
   async allGreet() {
     _clearAllIntervals();
 
     let lights = await Huejay.lights.getAll();
-    lights = lights.map((light) => light.reachable);
+    lights = lights.filter((light) => light.reachable);
 
     let rndmHue = rndm(0, 52000);
 
@@ -127,7 +84,7 @@ module.exports = {
       light.brightness = 100;
       light.saturation = 100;
       light.transitionTime = 1;
-  
+
       await Huejay.lights.save(light);
     }
 
